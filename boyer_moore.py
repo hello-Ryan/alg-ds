@@ -124,3 +124,5 @@ def boyer_moore(txt, pat):
             res.append(j + 1)
             j += m - mp[1]
 
+    return res
+
