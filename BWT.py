@@ -30,16 +30,13 @@ def bwt_to_original(bwt):
     pos = rank[ord(bwt[0]) - 36]
 
     while True:
-        pos = rank[ord(bwt[pos]) - 36] + sum(1 for x in bwt[:pos] if x == bwt[pos])
-
-        print(pos)
-
         if bwt[pos] == '$':
             break
         
         else:
             res = bwt[pos] + res
-        
+            pos = rank[ord(bwt[pos]) - 36] + sum(1 for x in bwt[:pos] if x == bwt[pos])
+
     return res
 
 def bwt_pattern_match(txt, pat):
